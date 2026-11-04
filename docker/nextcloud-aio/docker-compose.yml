@@ -1,0 +1,19 @@
+services:
+  nextcloud-aio-mastercontainer:
+    image: nextcloud/all-in-one:v14.4.1
+    container_name: nextcloud-aio-mastercontainer
+    restart: unless-stopped
+    init: true
+    ports:
+      - "80:80"
+      - "8080:8080"
+      - "8443:8443"
+    volumes:
+      - nextcloud_aio_mastercontainer:/mnt/docker-aio-config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - APACHE_PORT=11000
+      - APACHE_IP_BINDING=127.0.0.1
+
+volumes:
+  nextcloud_aio_mastercontainer:

@@ -1,0 +1,19 @@
+# Samsung One UI 7 - 9 Safe Debloat List
+# Verified on Samsung Galaxy S25 Ultra (Android 16/17)
+# Safe to remove without bootloops or breaking biometric security
+
+com.samsung.android.bixby.agent
+com.samsung.android.bixby.wakeup
+com.samsung.android.app.spage
+com.samsung.android.game.gametools
+com.samsung.android.game.gamehome
+com.samsung.android.game.gos
+com.samsung.android.app.tips
+com.sec.android.app.sbrowser
+com.samsung.android.kidsinstaller
+com.samsung.android.app.dressroom
+com.microsoft.skydrive
+com.facebook.katana
+com.facebook.system
+com.facebook.appmanager
+com.facebook.services

@@ -1,0 +1,12 @@
+# Google Pixel Safe Debloat List
+# Verified on Google Pixel 9 / 10 series
+# Disables non-essential background telemetry and auxiliary utilities
+
+com.google.android.apps.tips
+com.google.android.apps.safetyhub
+com.google.android.apps.tachyon
+com.google.android.youtube.music
+com.google.android.apps.subscriptions.red
+com.google.ar.core
+com.google.android.feedback
+com.google.android.apps.wellbeing

@@ -1,0 +1,15 @@
+services:
+  headscale:
+    image: headscale/headscale:v0.23.0
+    container_name: headscale
+    restart: unless-stopped
+    command: headscale serve
+    ports:
+      - "127.0.0.1:8080:8080" # Metrics / HTTP API (bind to localhost behind reverse proxy)
+      - "0.0.0.0:9090:9090"   # Optional prometheus metrics
+      - "0.0.0.0:50443:50443" # Optional gRPC endpoint
+    volumes:
+      - ./config:/etc/headscale:ro
+      - ./data:/var/lib/headscale
+    environment:
+      - TZ=Etc/UTC
