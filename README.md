@@ -23,6 +23,8 @@ Every configuration in this repository is actively tested on physical hardware:
 | [`vaultwarden`](docker/vaultwarden) | Vaultwarden, Cloudflare R2 automated Restic backups | [Vaultwarden Restic Backup Guide](https://techloverhd.com/2026/10/vaultwarden-docker-restic-cloudflare-r2-backup/) |
 | [`nginx-proxy-manager`](docker/nginx-proxy-manager) | NPM, SQLite / MariaDB, automated Let's Encrypt SSL | [Nginx Proxy Manager Guide](https://techloverhd.com/2026/11/self-host-nginx-proxy-manager-docker-guide/) |
 | [`nextcloud-aio`](docker/nextcloud-aio) | Nextcloud All-in-One mastercontainer, Redis, Postgres | [Nextcloud AIO Docker Guide](https://techloverhd.com/2026/10/self-host-nextcloud-aio-docker-guide/) |
+| [`uptime-kuma`](docker/uptime-kuma) | Uptime Kuma v2.5+, non-root Docker socket proxy | [Uptime Kuma Docker Setup Guide](https://techloverhd.com/2026/11/self-host-uptime-kuma-docker-guide/) |
+| [`zero-downtime-nginx`](docker/zero-downtime-nginx) | Nginx 1.27 Alpine, atomic rsync directory swaps, graceful reloads | [Zero-Downtime Docker Nginx Guide](https://techloverhd.com/2026/11/zero-downtime-docker-nginx-deployment-guide/) |
 
 ---
 
