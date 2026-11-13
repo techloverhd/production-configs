@@ -1,0 +1,8 @@
+# Secrets & Environment Files
+.env
+.env.*
+*.env
+*.key
+*.token
+*.secret
+*credentials*
