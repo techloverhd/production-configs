@@ -37,9 +37,10 @@ Every configuration in this repository is actively tested on physical hardware:
 
 ---
 
-### 3. Local AI & VRAM Benchmarks (`/ai-benchmarks`)
-| Benchmark Sheet | Coverage | Canonical Step-by-Step Guide |
+### 3. Local AI & VRAM Benchmarks (`/ai-benchmarks` & `/ai`)
+| Benchmark Sheet / Stack | Coverage | Canonical Step-by-Step Guide |
 | :--- | :--- | :--- |
+| [`cline-ollama`](ai/cline-ollama) | Custom 32K context Modelfile, systemd Flash Attention overrides & .clinerules | [Cline + Ollama Local AI Coding Agent Guide](https://techloverhd.com/2026/11/cline-ollama-local-ai-agent-guide/) |
 | [`vram-math-quantization-matrix.md`](ai-benchmarks/vram-math-quantization-matrix.md) | DeepSeek-R1 & Llama 3 VRAM formulas (Q4_K_M vs Q8 vs FP16) | [Local LLM VRAM Math Guide](https://techloverhd.com/2026/10/run-deepseek-r1-llama-3-locally-vram-ollama-guide/) |
 | [`snapdragon-npu-benchmarks.md`](ai-benchmarks/snapdragon-npu-benchmarks.md) | Snapdragon 8 Elite tokens/sec via PocketPal AI (GGUF) | [Run Local AI on Android Guide](https://techloverhd.com/2026/10/run-local-ai-android-apk-pocketpal-offline-guide/) |
 

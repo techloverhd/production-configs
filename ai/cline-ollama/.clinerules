@@ -1,0 +1,6 @@
+# Project Coding & Agent Rules
+- Always inspect existing files before proposing edits.
+- Keep edits minimal, atomic, and strictly scoped to the requested task.
+- Never delete existing tests or suppress TypeScript/linter errors with `any` or `@ts-ignore`.
+- After modifying code, run the project's test suite via terminal to verify zero regressions.
+- Prefer standard library or existing project dependencies over introducing new packages.

@@ -1,0 +1,9 @@
+FROM qwen2.5-coder:14b
+
+# Enforce 32K context window so Cline system prompts and tool schemas never truncate
+PARAMETER num_ctx 32768
+
+# Low temperature prevents hallucinated syntax and malformed search/replace diff blocks
+PARAMETER temperature 0.15
+PARAMETER top_p 0.9
+PARAMETER repeat_penalty 1.05
