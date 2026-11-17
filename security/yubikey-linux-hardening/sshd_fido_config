@@ -1,0 +1,14 @@
+# OpenSSH Daemon Server Hardening for FIDO2 / YubiKey Hardware Keys
+# Canonical Guide: https://techloverhd.com/2026/11/best-yubikey-for-android-and-linux/
+#
+# Add to /etc/ssh/sshd_config.d/50-fido-hardening.conf:
+
+# Require public key authentication
+PubkeyAuthentication yes
+
+# Disable plaintext password authentication
+PasswordAuthentication no
+KbdInteractiveAuthentication no
+
+# Restrict allowed key types to modern Ed25519 and FIDO2 hardware resident keys
+PubkeyAcceptedKeyTypes sk-ssh-ed25519@openssh.com,ssh-ed25519

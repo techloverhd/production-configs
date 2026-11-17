@@ -46,6 +46,13 @@ Every configuration in this repository is actively tested on physical hardware:
 
 ---
 
+### 4. Linux & Security Hardening (`/security`)
+| Tool / Utility | Scope & Features | Canonical Step-by-Step Guide |
+| :--- | :--- | :--- |
+| [`yubikey-linux-hardening`](security/yubikey-linux-hardening) | PAM U2F sudo 2FA, OpenSSH `ed25519-sk` resident keys & KeePassXC toolchain | [Best YubiKey for Android & Linux Guide](https://techloverhd.com/2026/11/best-yubikey-for-android-and-linux/) |
+
+---
+
 ## Contributing & Issues
 
 Feel free to open an issue or submit a pull request if you encounter version bumps or upstream configuration schema changes. 
