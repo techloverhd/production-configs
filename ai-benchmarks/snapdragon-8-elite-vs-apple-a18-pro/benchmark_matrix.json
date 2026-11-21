@@ -1,0 +1,123 @@
+{
+  "benchmark_suite": "Mobile Silicon Local LLM & GGUF Telemetry Suite",
+  "tested_environment": "Android 17 (Samsung One UI 9.0) & iOS 18.2",
+  "verification_date": "November 2026",
+  "inference_client": "PocketPal AI v0.10.4 / llama.cpp b4890",
+  "backends": {
+    "snapdragon_8_elite": "ARM KleidiAI + Vulkan / Oryon CPU",
+    "apple_a18_pro": "Apple Metal 3 GPU + AMX"
+  },
+  "silicon_specifications": {
+    "snapdragon_8_elite": {
+      "chassis": "Samsung Galaxy S25 Ultra",
+      "cpu": "Qualcomm Oryon (2x 4.32 GHz Prime + 6x 3.53 GHz Performance)",
+      "dram_capacity_gb": 12,
+      "memory_standard": "LPDDR5X-10600 (64-bit dual-channel)",
+      "theoretical_bandwidth_gbps": 84.8,
+      "measured_bandwidth_gbps": 84.8,
+      "os_headroom_ceiling_gb": 7.8,
+      "thermal_solution": "Dual phase-change titanium vapor chamber"
+    },
+    "apple_a18_pro": {
+      "chassis": "Apple iPhone 16 Pro Max",
+      "cpu": "Apple A18 Pro 6-core (2x 4.05 GHz + 4x 2.42 GHz)",
+      "dram_capacity_gb": 8,
+      "memory_standard": "LPDDR5X-7500 / 64-bit",
+      "theoretical_bandwidth_gbps": 68.2,
+      "measured_bandwidth_gbps": 60.0,
+      "os_headroom_ceiling_gb": 5.2,
+      "thermal_solution": "Graphite substrate thermal stack"
+    }
+  },
+  "benchmarks": [
+    {
+      "model_name": "DeepSeek-R1-Distill-Qwen-1.5B",
+      "quantization": "Q4_K_M",
+      "context_length": 2048,
+      "snapdragon_8_elite": {
+        "tokens_per_second": 28.4,
+        "prefill_tokens_per_sec": 142.0,
+        "ram_consumption_mb": 1450,
+        "status": "PASS"
+      },
+      "apple_a18_pro": {
+        "tokens_per_second": 22.8,
+        "prefill_tokens_per_sec": 168.0,
+        "ram_consumption_mb": 1520,
+        "status": "PASS"
+      },
+      "performance_delta_pct": 24.6
+    },
+    {
+      "model_name": "Qwen-2.5-3B-Instruct",
+      "quantization": "Q4_K_M",
+      "context_length": 2048,
+      "snapdragon_8_elite": {
+        "tokens_per_second": 18.6,
+        "prefill_tokens_per_sec": 98.4,
+        "ram_consumption_mb": 2480,
+        "status": "PASS"
+      },
+      "apple_a18_pro": {
+        "tokens_per_second": 14.2,
+        "prefill_tokens_per_sec": 112.5,
+        "ram_consumption_mb": 2560,
+        "status": "PASS"
+      },
+      "performance_delta_pct": 31.0
+    },
+    {
+      "model_name": "Llama-3.2-3B-Instruct",
+      "quantization": "Q4_K_M",
+      "context_length": 2048,
+      "snapdragon_8_elite": {
+        "tokens_per_second": 19.2,
+        "prefill_tokens_per_sec": 102.1,
+        "ram_consumption_mb": 2420,
+        "status": "PASS"
+      },
+      "apple_a18_pro": {
+        "tokens_per_second": 14.8,
+        "prefill_tokens_per_sec": 118.0,
+        "ram_consumption_mb": 2510,
+        "status": "PASS"
+      },
+      "performance_delta_pct": 29.7
+    },
+    {
+      "model_name": "DeepSeek-R1-Distill-Qwen-7B",
+      "quantization": "Q4_K_M",
+      "context_length": 2048,
+      "snapdragon_8_elite": {
+        "tokens_per_second": 13.1,
+        "prefill_tokens_per_sec": 64.2,
+        "ram_consumption_mb": 5120,
+        "status": "PASS",
+        "notes": "Stable execution within 7.8GB LMK envelope. Thermal stability at 11.4 tok/s after 10-minute saturation."
+      },
+      "apple_a18_pro": {
+        "tokens_per_second": 0.0,
+        "prefill_tokens_per_sec": 0.0,
+        "ram_consumption_mb": 5290,
+        "status": "CRASH_EXC_RESOURCE",
+        "notes": "Breached 5.2GB Jetsam kernel ceiling. Terminated instantly without OS notification."
+      },
+      "performance_delta_pct": null
+    }
+  ],
+  "ten_minute_thermal_saturation": {
+    "model": "DeepSeek-R1 1.5B (Continuous Generation)",
+    "snapdragon_8_elite": {
+      "initial_tok_s": 28.4,
+      "ten_min_tok_s": 24.8,
+      "retention_pct": 87.3,
+      "peak_skin_temp_c": 41.2
+    },
+    "apple_a18_pro": {
+      "initial_tok_s": 22.8,
+      "ten_min_tok_s": 16.2,
+      "retention_pct": 71.1,
+      "peak_skin_temp_c": 44.8
+    }
+  }
+}
