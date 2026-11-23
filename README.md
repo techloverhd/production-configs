@@ -25,6 +25,7 @@ Every configuration in this repository is actively tested on physical hardware:
 | [`nextcloud-aio`](docker/nextcloud-aio) | Nextcloud All-in-One mastercontainer, Redis, Postgres | [Nextcloud AIO Docker Guide](https://techloverhd.com/2026/10/self-host-nextcloud-aio-docker-guide/) |
 | [`uptime-kuma`](docker/uptime-kuma) | Uptime Kuma v2.5+, non-root Docker socket proxy | [Uptime Kuma Docker Setup Guide](https://techloverhd.com/2026/11/self-host-uptime-kuma-docker-guide/) |
 | [`beszel`](docker/beszel) | Beszel v0.21.2 Hub & Agent, NVML GPU telemetry, S.M.A.R.T. disk monitoring | [Beszel Docker Monitoring Guide](https://techloverhd.com/2026/11/self-host-beszel-docker-server-monitoring/) |
+| [`simplex-chat`](docker/simplex-chat) | SimpleX SMP relay, XFTP file server v7.1.4, ntfy UnifiedPush | [SimpleX Chat Setup Guide](https://techloverhd.com/2026/11/simplex-chat-setup-without-user-ids/) |
 | [`zero-downtime-nginx`](docker/zero-downtime-nginx) | Nginx 1.27 Alpine, atomic rsync directory swaps, graceful reloads | [Zero-Downtime Docker Nginx Guide](https://techloverhd.com/2026/11/zero-downtime-docker-nginx-deployment-guide/) |
 
 ---

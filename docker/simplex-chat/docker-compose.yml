@@ -1,0 +1,75 @@
+services:
+  smp-server:
+    image: simplexchat/smp-server:v7.1.4
+    container_name: simplex-smp
+    restart: unless-stopped
+    environment:
+      ADDR: ${SMP_ADDR}
+      PASS: ${SMP_PASS}
+      WEB_MANUAL: "1"
+    ports:
+      - "5223:5223"
+    volumes:
+      - ./smp/config:/etc/opt/simplex
+      - ./smp/logs:/var/opt/simplex
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.50"
+
+  xftp-server:
+    image: simplexchat/xftp-server:v7.1.4
+    container_name: simplex-xftp
+    restart: unless-stopped
+    environment:
+      ADDR: ${XFTP_ADDR}
+      PASS: ${XFTP_PASS}
+      QUOTA: ${XFTP_QUOTA:-20gb}
+    ports:
+      - "443:443"
+    volumes:
+      - ./xftp/config:/etc/opt/simplex-xftp
+      - ./xftp/logs:/var/opt/simplex-xftp
+      - ./xftp/files:/srv/xftp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.50"
+
+  ntfy:
+    image: binwiederhier/ntfy:v2.11.0
+    container_name: ntfy-unifiedpush
+    command:
+      - serve
+    restart: unless-stopped
+    environment:
+      TZ: UTC
+      NTFY_BASE_URL: ${NTFY_BASE_URL:-https://ntfy.example.com}
+      NTFY_BEHIND_PROXY: "true"
+      NTFY_CACHE_FILE: /var/lib/ntfy/cache.db
+      NTFY_AUTH_FILE: /var/lib/ntfy/user.db
+      NTFY_AUTH_DEFAULT_ACCESS: deny-all
+    ports:
+      - "127.0.0.1:2586:80"
+    volumes:
+      - ./ntfy/cache:/var/cache/ntfy
+      - ./ntfy/lib:/var/lib/ntfy
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: "0.25"
