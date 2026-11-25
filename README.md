@@ -34,6 +34,7 @@ Every configuration in this repository is actively tested on physical hardware:
 | Tool / Utility | Scope & Features | Canonical Step-by-Step Guide |
 | :--- | :--- | :--- |
 | [`debloat-lists`](android/debloat-lists) | Safe Canta / Shizuku debloat lists for Samsung & Pixel | [Rootless Android Debloat Guide](https://techloverhd.com/2026/10/debloat-android-phone-without-root-pc/) |
+| [`gcam-s25-ultra`](android/gcam-s25-ultra) | Calibrated BigKaka AGC 9.6 `.agc` profile & Camera2 lens mapping for S25 Ultra | [Galaxy S25 Ultra GCam & XML Guide](https://techloverhd.com/2026/11/gcam-port-samsung-galaxy-s25-ultra-config-xml/) |
 | [`wireless-adb`](android/wireless-adb) | Non-root Wi-Fi ADB pairing script for Shizuku & term | [Shizuku Wireless Debugging Guide](https://techloverhd.com/2026/10/shizuku-apk-download-wireless-debugging-setup-guide/) |
 | [`termux-bootstraps`](android/termux-bootstraps) | Proot-distro Debian + XFCE desktop environment via VNC | [Termux Linux Desktop Guide](https://techloverhd.com/2026/10/termux-apk-download-install-linux-desktop-android-guide/) |
 
